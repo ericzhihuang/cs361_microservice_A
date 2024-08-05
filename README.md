@@ -16,8 +16,10 @@ Set up the Flask App:
 
 ## How To Use The Microservice
 1. Download the app.py and test.py files.
-2. Make sure that these files are placed in the root of your directory. 
-3. Open a terminal and navigate to the directory where your Flask application (app.py) is located.
+2. Make sure that these files are placed in the root of your directory.
+3. In the test.py file, edit the location to where you want know the weather of.
+- In this example, 'San Francisco' was chosen
+4. Open a terminal and navigate to the directory where your Flask application (app.py) is located.
 - In this example, run the command **cd weather_api** since we created the directory weather_api (mkdir weather_api)
 5. Use the following command to run the Flask server: **python3 app.py**
 6. In a new terminal window execute the test script: **python3 test.py**
