@@ -25,7 +25,7 @@ Set up the Flask App:
 6. In a new terminal window execute the test script: **python3 test.py**
 7. The test script should output the weather data for the specified location (e.g., San Francisco) if the microservice and API call are working correctly.
 8. Open a web browser and navigate to **http://127.0.0.1:5000/weather?location=** to test if the server is responding to requests. You should see JSON data related to the weather for the specified location.
-- For example: http://127.0.0.1:5000/weather?location=San%20Francisco would output the weather in San Francisco
+- For example: http://127.0.0.1:5000/weather?location=San%20Francisco would output the weather in San Francisco.
 
 **PLEASE NOTE**: If you want to enter in your own weather api key, you can do so by signing up on https://openweathermap.org/ 
 - Navigate to 'My API Keys' under the profile settings
