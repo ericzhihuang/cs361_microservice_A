@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import requests
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -20,6 +21,8 @@ def get_weather():
             'humidity': data['main']['humidity'],
             'wind_speed': data['wind']['speed'],
             'weather_description': data['weather'][0]['description'],
+            'date': datetime.now().strftime('%Y-%m-%d'),
+            'time': datetime.now().strftime("%H:%M:%S")
         }
         return jsonify(weather_details)
     else:
