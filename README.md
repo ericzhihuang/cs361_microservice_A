@@ -76,10 +76,10 @@ print(response.json())
 {
   "current_weather": {
     "date": "2024-08-06",
-    "humidity": 89,
+    "humidity": 90,
     "location": "San Francisco",
-    "temperature": 55.42,
-    "time": "02:51:01",
+    "temperature": 55.26,
+    "time": "03:19:38",
     "weather_description": "broken clouds",
     "wind_speed": 8.05
   },
@@ -102,8 +102,9 @@ print(response.json())
   "current_weather": {
     "date": "2024-08-06",
     "humidity": 90,
-    "temperature": 55.54,
-    "time": "02:41:25",
+    "location": "San Francisco",
+    "temperature": 55.26,
+    "time": "03:20:13",
     "weather_description": "broken clouds",
     "wind_speed": 8.05
   },
@@ -111,6 +112,7 @@ print(response.json())
     "Friday": {
       "date": "2024-08-09",
       "humidity": 71,
+      "location": "San Francisco",
       "temperature": 62.55,
       "weather_description": "scattered clouds",
       "wind_speed": 13.58
@@ -118,6 +120,7 @@ print(response.json())
     "Saturday": {
       "date": "2024-08-10",
       "humidity": 72,
+      "location": "San Francisco",
       "temperature": 62.76,
       "weather_description": "few clouds",
       "wind_speed": 13.62
@@ -125,6 +128,7 @@ print(response.json())
     "Thursday": {
       "date": "2024-08-08",
       "humidity": 76,
+      "location": "San Francisco",
       "temperature": 60.87,
       "weather_description": "few clouds",
       "wind_speed": 14.94
@@ -132,6 +136,7 @@ print(response.json())
     "Tuesday": {
       "date": "2024-08-06",
       "humidity": 61,
+      "location": "San Francisco",
       "temperature": 65.98,
       "weather_description": "few clouds",
       "wind_speed": 10.54
@@ -139,6 +144,7 @@ print(response.json())
     "Wednesday": {
       "date": "2024-08-07",
       "humidity": 66,
+      "location": "San Francisco",
       "temperature": 64.56,
       "weather_description": "few clouds",
       "wind_speed": 15.55
