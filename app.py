@@ -17,6 +17,7 @@ def get_weather():
     if response.status_code == 200:
         data = response.json()
         weather_details = {
+            'location': location,
             'temperature': data['main']['temp'],
             'humidity': data['main']['humidity'],
             'wind_speed': data['wind']['speed'],
