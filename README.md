@@ -47,20 +47,26 @@ An API key is already provided in app.py, but if you want to enter in your own w
 6. In a new terminal window execute the test script: ```python3 test.py```
 7. The test script should output the weather data for the specified location (e.g., San Francisco) if the microservice and API call are working correctly.
 8. Open a web browser and navigate to ```http://127.0.0.1:5000/weather?location=``` to test if the server is responding to requests. You should see JSON data related to the weather for the specified location. **# After 'location=' enter the desired location.**
+9. To see the forecast on future days, open a web browser and navigate to ```http://127.0.0.1:5000/weather?location=YOUR_LOCATION&days=NUMBER_OF_DAYS``` replacing 'YOUR_LOCATION' with your desired location and 'NUMBER_OF_DAYS' with the number of days you wish to see.  
 - For example: http://127.0.0.1:5000/weather?location=London would output the weather in London.
+- http://127.0.0.1:5000/weather?location=London&days=5 would output the weather in London for the following five days.
 
 ## How to Request Data
 - Endpoint: `/weather`
 - Method: `GET`
 - Query Parameters:
     - `location`: Name of the location (e.g., San Francisco)
+    - `days`: Number of days to forecast (e.g., 5)
 
 ### Example Request
 ```python
 import requests
 
 url = 'http://127.0.0.1:5000/weather'
-params = {'location': 'San Francisco'}
+params = {
+    'location': 'San Francisco',
+    'days': 5  # Number of days to forecast
+}
 response = requests.get(url, params=params)
 print(response.json())
 ```
@@ -68,12 +74,75 @@ print(response.json())
 ### Output Format
 ```
 {
-  "date": "2024-08-05",
-  "humidity": 91,
-  "location": San Francisco,
-  "temperature": 55.36,
-  "time": "03:24:30",
-  "weather_description": "overcast clouds",
-  "wind_speed": 15.01
+  "current_weather": {
+    "date": "2024-08-06",
+    "humidity": 89,
+    "location": "San Francisco",
+    "temperature": 55.42,
+    "time": "02:51:01",
+    "weather_description": "broken clouds",
+    "wind_speed": 8.05
+  },
+  "forecast": {
+    "Tuesday": {
+      "date": "2024-08-06",
+      "humidity": 61,
+      "location": "San Francisco",
+      "temperature": 65.98,
+      "weather_description": "few clouds",
+      "wind_speed": 10.54
+    }
+  }
+}
+```
+
+### Output Format For Multiple Days
+```
+{
+  "current_weather": {
+    "date": "2024-08-06",
+    "humidity": 90,
+    "temperature": 55.54,
+    "time": "02:41:25",
+    "weather_description": "broken clouds",
+    "wind_speed": 8.05
+  },
+  "forecast": {
+    "Friday": {
+      "date": "2024-08-09",
+      "humidity": 71,
+      "temperature": 62.55,
+      "weather_description": "scattered clouds",
+      "wind_speed": 13.58
+    },
+    "Saturday": {
+      "date": "2024-08-10",
+      "humidity": 72,
+      "temperature": 62.76,
+      "weather_description": "few clouds",
+      "wind_speed": 13.62
+    },
+    "Thursday": {
+      "date": "2024-08-08",
+      "humidity": 76,
+      "temperature": 60.87,
+      "weather_description": "few clouds",
+      "wind_speed": 14.94
+    },
+    "Tuesday": {
+      "date": "2024-08-06",
+      "humidity": 61,
+      "temperature": 65.98,
+      "weather_description": "few clouds",
+      "wind_speed": 10.54
+    },
+    "Wednesday": {
+      "date": "2024-08-07",
+      "humidity": 66,
+      "temperature": 64.56,
+      "weather_description": "few clouds",
+      "wind_speed": 15.55
+    }
+  }
 }
 ```
