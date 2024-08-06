@@ -29,9 +29,15 @@ python3 -m venv ./venv
 ```
 source venv/bin/activate
 ```
+## Setting up Weather API Key
 
+An API key is already provided in app.py, but if you want to enter in your own weather api key, you can do so by signing up on https://openweathermap.org/ (or any other website that provides an api key)
+- Navigate to 'My API Keys' under the profile settings
+- Generate an api key
+- Copy the api key and paste into the file app.py where it says **api_key = 'xxxx' # Replace xxxx with your actual API key** (Line 13)
+  
 ## How To Use The Microservice
-1. Download the app.py and test.py files.
+1. Download app.py and the test.py file.
 2. Make sure that these files are placed in the root of your directory.
 3. In the test.py file, edit the location to the location that is desired.
 - In this example, 'San Francisco' was chosen
@@ -42,11 +48,6 @@ source venv/bin/activate
 7. The test script should output the weather data for the specified location (e.g., San Francisco) if the microservice and API call are working correctly.
 8. Open a web browser and navigate to ```http://127.0.0.1:5000/weather?location=``` to test if the server is responding to requests. You should see JSON data related to the weather for the specified location. **# After 'location=' enter the desired location.**
 - For example: http://127.0.0.1:5000/weather?location=London would output the weather in London.
-
-**PLEASE NOTE**: If you want to enter in your own weather api key, you can do so by signing up on https://openweathermap.org/ 
-- Navigate to 'My API Keys' under the profile settings
-- Generate an api key
-- Copy the api key and paste into the file app.py where it says **api_key = 'xxxx' # Replace xxxx with your actual API key** (Line 13)
 
 ## How to Request Data
 - Endpoint: `/weather`
