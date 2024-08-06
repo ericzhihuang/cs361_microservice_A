@@ -1,4 +1,4 @@
-# cs361_microservice
+# cs361_microservice_A
 
 An Open Weather Map API to find the weather of a location based on location name.
 
